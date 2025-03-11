@@ -9,6 +9,7 @@ export default {
   "favicon": "img/favicon.ico",
   "url": "https://gravitate-health.github.io",
   "baseUrl": "/",
+  "trailingSlash": false,
   "organizationName": "gravitate-health",
   "projectName": "gravitate-health.github.io",
   "onBrokenLinks": "throw",
