@@ -8,5 +8,5 @@ This documentation is designed to help you understand the various APIs and tools
 
 ## Getting Started
 To get started, you can explore the following sections:
-- **[Lenses Development](lenses-development)**: Learn how to develop lenses for the Gravitate Health platform.
-- **[Preprocessor Development](preprocessor-development)**: Understand how to develop preprocessors for the platform.
+- **[Lenses Development](lenses-development/lenses-development-intro.md)**: Learn how to develop lenses for the Gravitate Health platform.
+- **[Preprocessor Development](preprocessor-development/preprocessor-development.md)**: Understand how to develop preprocessors for the platform.
