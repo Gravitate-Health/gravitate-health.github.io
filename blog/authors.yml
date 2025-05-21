@@ -1,12 +1,12 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+aalonsolopez:
+  name: Alejandro Alonso López
+  title: Software Engineer @ Gravitate Health
+  url: https://github.com/aalonsolopez
+  image_url: https://github.com/aalonsolopez.png
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    x: alexxistyping
+    github: aalonsolopez
 
 slorber:
   name: Sébastien Lorber

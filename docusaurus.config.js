@@ -77,21 +77,21 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Gravitate Health Developer Docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/fosps-logo.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/GravitateHealth/gravitate-health.github.io',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,7 +104,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro',
               },
             ],
@@ -113,17 +113,13 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'X',
-                href: 'https://x.com/docusaurus',
+                href: 'https://x.com/gravitatehealth',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/gravitatehealth',
+              }
             ],
           },
           {
@@ -135,12 +131,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/GravitateHealth/gravitate-health.github.io',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Gravitate Health, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
