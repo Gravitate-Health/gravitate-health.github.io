@@ -97,17 +97,13 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'X',
-                href: 'https://x.com/docusaurus',
+                href: 'https://x.com/gravitatehealth',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/gravitatehealth',
+              }
             ],
           },
           {
@@ -120,7 +116,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Gravitate Health, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
