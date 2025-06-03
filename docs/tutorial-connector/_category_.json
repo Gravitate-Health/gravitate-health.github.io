@@ -1,0 +1,8 @@
+{
+  "label": "Tutorial - Connector",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Retrieve FHIR resources from your sources into FOSPS."
+  }
+}
