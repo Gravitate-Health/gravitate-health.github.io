@@ -10,15 +10,15 @@ What are lenses and how they contribute to the Focusing Mechanism?
 
 ## Understanding lens capabilities 
 
-### adding CSS classes for highlighting/collapsing
+### Adding CSS classes for highlighting/collapsing
 
-### adding HTML tags for hyperlinks/media
+### Adding HTML tags for hyperlinks/media
 
-### limitations 
+### Limitations 
 
 Lenses can do many things, but not everything is possible.
 
-#### remove original content
+#### Remove original content
 
 The most important limitation is that Lenses cannot remove content (they may only collapse it). Why? think that eventhough you may develop the most advanced Lens, there is always a risk that it does not capture all extreme cases; original ePI information must be always avilable, as intended, to patients. This is also a legal requirement, as the original text is the only .
 
@@ -28,4 +28,4 @@ Lenses should be designed to run in the phones of patients. Also known as client
 
 Consider also the case where server-side focusing is employed, meaning the server receives (or aready has) all the patient's information and processes the focusing operation. This operation needs to scale for many users, thus, again it is important for Lenses to not have high coputational resources. Because Lense execution results may change according to different context, Fully Focused ePIs are NOT cached, nor they should be. Lens execution is considered ephimeral.
 
-When dealing with this limitation, try always to rely on [Pre-processors](../../ref/preprocessor.md) to perform the Highly demanding computational tasks. 
+When dealing with this limitation, try always to rely on [Pre-processors](/docs/tutorial-Preprocessor/0%20-%20Introduction.md) to perform the Highly demanding computational tasks. 
