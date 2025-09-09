@@ -25,7 +25,8 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'gravitate-health', // Usually your GitHub org/user name.
   projectName: 'gravitate-health.github.io', // Usually your repo name.
-
+  deploymentBranch: 'gh-pages', 
+  
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
