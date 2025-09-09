@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Ingest ePIs and IPS',
-    Svg: require('@site/static/img/cld-cloud-network-folder-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/cloud-data-download-svgrepo-com.svg').default,
     description: (
       <>
         FOSPS uses HL-7 FHIR to manage ePIs (electronic Product Information) and IPS (International Patient Summary), 
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Post process ePIs',
-    Svg: require('@site/static/img/logout-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/annotate-svgrepo-com.svg').default,
     description: (
       <>
         Add personality and personalization to ePIs. Whether is preparing them as your ePrescription/eDispensation applicaiton
@@ -92,7 +92,7 @@ const FeatureList = [
   },
   {
     title: 'Metrics Management',
-    Svg: require('@site/static/img/graph-chart-data-analytics-statistic-report-analysis-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/chart-mixed-svgrepo-com.svg').default,
     description: (
       <>
         Utilizes the Grafana/Loki/Prometheus Stack to monitor and analyze the performance and health of FOSPS services. This allows administrators to track KPIs, identify bottlenecks, and ensure system stability.
