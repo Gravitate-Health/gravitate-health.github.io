@@ -32,8 +32,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Gravitate-Health's Federated Open Source Platform and Services is a platform to build ePrescription/eDispensation apps, this site is the developer's manual to build components for it.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
