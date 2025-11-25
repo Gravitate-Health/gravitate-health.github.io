@@ -36,6 +36,15 @@ This extension contains sub-extensions to define the linkage:
 
 By declaring the concept (code) and linking it to a specific elementClass using the HtmlElementLink extension, preprocessors enable the narrative text (which is contained within HTML) to feature class attributes that reference these defined concepts.
 
+## Preprocessor Execution
+A Preprocessor is implemented as a containerized service module that is pluggable into FOSPS. This service must expose an endpoint (typically `/preprocess`) that receives the entire ePI resource in its body and responds with the preprocessed version, having performed the semantic annotation. The preprocessed response should maintain the original FHIR format of the input ePI, ensuring that no changes are made to the underlying data structure. This simple service is specified in [OpenAPI](https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml) for developer convenience.
+
+Preprocessors must be implemented as separate services, allowing them to be easily developed, tested, and maintained independently of the rest of the system. This modularity enables a wide range of preprocessing techniques to be integrated into FOSPS, making it possible to handle various use cases and requirements in different languages using different frameworks.
+
+To enable the focusing manager component to locate and orchestrate preprocessors, each preprocessor service should be launched with a specific tag: `eu.gravitate-health.fosps.preprocessing=True`. This allows the focusing manager to identify available preprocessors and direct incoming ePI resources through the relevant preprocessing pipeline. The focusing manager will then forward the preprocessed output to the next stage of processing.
+
+By following this design pattern, developers can easily create and integrate new preprocessing algorithms into FOSPS, enhancing its capabilities and flexibility in handling diverse healthcare data formats and use cases.
+
 ## Technical Requirements for Preprocessor HTML Modification
 When generating annotations, preprocessors must adhere to strict constraints regarding HTML modifications to ensure regulatory compliance and proper functioning within the Focusing Mechanism:
 
@@ -44,6 +53,6 @@ When generating annotations, preprocessors must adhere to strict constraints reg
     * Adding new HTML tags for the purpose of supplementary information or delineation.
  2. Adding Classes to Existing Tags: Preprocessors should utilize HTML markup language to target text portions. Annotations are commonly applied by adding classes to existing HTML tags, such as header tags (`<H1>`) or list items (`<UL>`, `<IL>`).
  3. Generating Invisible Tags: To mark arbitrary text segments for annotation without affecting the display style, preprocessors may use non-style-changing tags. The preferred tag for selecting arbitrary text is the `<span>` tag.
- 4. Stacking Awareness: Since preprocessors can be stacked, a preprocessor's input may be the output of one or more previous preprocessors, and viceversa. Developers should implement logic that checks for existing attributes and handles their concatenation to maintain a clean and effective structure. Some considerations include:
+ 4. Stacking Awareness: Since preprocessors can be stacked, i.e. a preprocessor's input may be the output of one or more previous preprocessors, and viceversa; Developers should implement logic that checks for existing attributes and handles their concatenation to maintain a clean and effective structure. Some considerations include:
      1. Duplicate prevention: avoid adding duplicates like extension:concept, or extension:elementClass with the same values
      2. Avoiding HTML Nesting (Handling Existing Attributes): Developers must be aware that when applying annotations, they should avoid creating redundant or complex HTML structures. If a target HTML element already has a class attribute (potentially added by a preceding preprocessor), the new class attribute referencing the terminology concept should be added to the existing class attributes, rather than wrapping the element in a new, nested tag.
