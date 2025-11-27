@@ -83,7 +83,8 @@ docker run --rm \
   openapitools/openapi-generator-cli generate \
   -i https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml \
   -g python-flask \
-  -o /local/generated/python-flask
+  -o /local/generated/python-flask \
+  --additional-properties=packageName=preprocessor
 ```
 **Project Structure**
 
