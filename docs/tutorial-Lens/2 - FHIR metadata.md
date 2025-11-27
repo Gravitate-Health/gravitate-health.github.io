@@ -1,4 +1,8 @@
+# FHIR Metadata
+
+:::info Lens Profile
 The **[Lens Profile](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-lens.html)** is the FHIR resource archetype used to package Lenses, which encode the specific logic (algorithm) required to automatically adapt ePI content for personalization. This profile is derived from the standard [FHIR Library resource](https://build.fhir.org/library.html).
+:::
 
 Lenses are treated as fully fledged FHIR resources and must contain both the operational code and descriptive metadata. The specification requires several key fields, many of which can include translations via the FHIR `extension:translation` [mechanism](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-translation.html).
 
@@ -8,7 +12,9 @@ Lenses are treated as fully fledged FHIR resources and must contain both the ope
 
 ### 1. Lens Code and Data (`content` Element)
 
+:::warning Security
 This element contains the executable algorithm of the lens. The lens code handles sensitive information and requires close monitoring, making the integrity of this field essential.
+:::
 
 | FHIR Path | Description | Constraints & Usage |
 | :--- | :--- | :--- |
@@ -28,7 +34,9 @@ These fields provide technical and human-readable labels for the lens.
 
 ### 3. Descriptive Metadata
 
+:::note Purpose
 These fields communicate the functional and scientific context of the lens to both developers and end-users.
+:::
 
 | FHIR Path | Description | Constraints & Usage |
 | :--- | :--- | :--- |
@@ -38,11 +46,15 @@ These fields communicate the functional and scientific context of the lens to bo
 | **`type`** | The type of knowledge asset this library contains. | This is a required field fixed to the value of `logical-library`. |
 | **`subject[x]`** | Type of individual the library content is focused on. | Must-Support element. |
 | **`jurisdiction`** | Countries and regions within which this artifact is targeted for use. | This is an important Must-Support field because Trust Functions (TF) can be customized for different regions (jurisdictional based TF). |
-| **`extension:lee-version`** | LEE version - string. | This is a **mandatory extension** required to indicate compatibility with the Lens Execution Environment (LEE).
+| **`extension:lee-version`** | LEE version - string. | This is a **mandatory extension** required to indicate compatibility with the Lens Execution Environment (LEE). |
+
+:::tip Regional Customization
+The `jurisdiction` field is particularly important as Trust Functions can be customized for different regions, enabling jurisdictional-based Trust Functions.
+:::
 
 ---
 
-### FHIR Lens Example (Conceptual Snippet)
+## FHIR Lens Example (Conceptual Snippet)
 
 The Lens Profile is structured as a FHIR `Library` resource. A developer would populate these fields using JSON (or XML) formatting:
 

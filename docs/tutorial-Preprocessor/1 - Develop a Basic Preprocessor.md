@@ -1,46 +1,86 @@
 # Develop a Basic Preprocessor
 
-In general you will need to produce a Docker container that implements a specific http REST interface (see [this openapi specification](https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml )).
+:::info Requirements
+You will need to produce a Docker container that implements a specific HTTP REST interface. See the [OpenAPI specification](https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml) for complete details.
+:::
 
-There are several alternatives to do this, one is to fork an existing project that is similar to what you what (languaje, frameworks, process, etc...). Another option is to use a code generator to create a new proyect with almost everything ready to run the server. And, of course, you may also create your project from scratch, as long as it follows the conditions above.
+There are several alternatives to accomplish this:
 
-## Forking template
+- **Fork an existing template** - Start with a project similar to your needs (language, frameworks, process, etc.)
+- **Use a code generator** - Create a new project with almost everything ready to run the server
+- **Build from scratch** - Create your project from the ground up, as long as it follows the OpenAPI specification
 
-### Java Script
+Select the development path that best fits your needs and expertise.
 
- https://github.com/Gravitate-Health/preprocessing-service-example
+## Forking a Template
 
-This is a simple preprocessor written in TrueScript/JavaScript. 
-You can write the business logic in `src/controllers/preporcessing.ts`.
-It is ready with Docker file, and even kubernetes yaml definitions.
+### JavaScript
+
+📦 **Repository:** [preprocessing-service-example](https://github.com/Gravitate-Health/preprocessing-service-example)
+
+This is a simple preprocessor written in TypeScript/JavaScript.
+
+:::tip Quick Start
+You can write the business logic in `src/controllers/preprocessing.ts`. The template is ready with Dockerfile and even Kubernetes YAML definitions.
+:::
+
+**Key Features:**
+- Pre-configured TypeScript environment
+- Docker and Kubernetes deployment files included
+- Ready-to-use project structure
+
+**Getting Started:**
+1. Fork the repository
+2. Add your dependencies
+3. Write your code
 
 ### Python
 
-https://github.com/Gravitate-Health/preprocessing-service-example-python
+📦 **Repository:** [preprocessing-service-example-python](https://github.com/Gravitate-Health/preprocessing-service-example-python)
 
 This is another simple preprocessor written in Python.
-It is ready to fork and develop your own preprocessor from it, start at `preprocessor\controllers\preprocess_controller.py` the function is `_apply_preproce`. 
-This project also includes components to access common ePI elements such as the composition, as well as managing [`HtmlElementLink`](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-HtmlElementLink.html) Extension and extract and manipulate HTML content.
-Add your dependencies, write your code, test it with the embedded ePI examples.
 
-## Generic Approach using OpenAPI Generator 
-You can opt to use an API sever generator, for example [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), which will be explained in detail.
-Preprocessor OpenAPI Spec is in:
+:::tip Quick Start
+It's ready to fork and develop your own preprocessor from it. Start at `preprocessor\controllers\preprocess_controller.py` — the function is `_apply_preprocess`.
+:::
 
- https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml 
+**Key Features:**
+- Components to access common ePI elements such as the composition
+- Built-in support for managing [`HtmlElementLink`](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-HtmlElementLink.html) Extension
+- Tools to extract and manipulate HTML content
+- Embedded ePI examples for testing
+
+**Getting Started:**
+1. Fork the repository
+2. Add your dependencies
+3. Write your code
+4. Test it with the embedded ePI examples
+
+## Generic Approach using OpenAPI Generator
+
+You can opt to use an API server generator, for example [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), which will be explained in detail.
+
+📋 **Preprocessor OpenAPI Spec:**
+```
+https://raw.githubusercontent.com/Gravitate-Health/preprocessing-service-example/refs/heads/main/openapi.yaml
+```
 
 You can create servers with stubs in any of the supported languages.
-You may need to create Dockefile for the Preprocessor service; rembember to expose the port where the API is published.
 
-Using the official Docker image avoids installing Java or OpenAPI Generator locally. You will need [docker installed](https://docs.docker.com/engine/install/).
+:::warning Docker Requirements
+You may need to create a Dockerfile for the Preprocessor service. Remember to expose the port where the API is published.
+:::
+
+:::info Installation-Free Approach
+Using the official Docker image avoids installing Java or OpenAPI Generator locally. You will need [Docker installed](https://docs.docker.com/engine/install/).
+:::
 
 
 ### 1. Generate a server stub
 
 Use the dockerized generator:
 
-
-```sh
+```bash
 docker run --rm \
   -v ${PWD}:/local --user $(id -u):$(id -g) \
   openapitools/openapi-generator-cli generate \
@@ -59,7 +99,7 @@ Where `<language>` can be:
 | Go Gin                  | `go-gin-server`         |
 | Rust Hyper/Tower        | `rust-server`           |
 
-Checkout the full list of supported languajes (+ frameworks) in openapi-generator's list of [SERVER Gerenators](https://openapi-generator.tech/docs/generators#server-generators)
+Checkout the full list of supported languages (+ frameworks) in openapi-generator's list of [SERVER Generators](https://openapi-generator.tech/docs/generators#server-generators)
 
 
 ### 2. Implement business logic
@@ -73,7 +113,7 @@ After generation:
 ### 3. Build & run Docker image
 
 Ensure the docker image can be built, if there isn't any Dockerfile [create one for your project](https://www.docker.com/blog/how-to-create-dockerfiles-with-genai/).
-```sh
+```bash
 docker build -t my-service .
 docker run -p 8080:8080 my-service
 ```
@@ -86,7 +126,7 @@ docker run -p 8080:8080 my-service
 
 **Generate**
 
-```sh
+```bash
 docker run --rm \
   -v ${PWD}:/local --user $(id -u):$(id -g) \
   openapitools/openapi-generator-cli generate \
@@ -97,7 +137,7 @@ docker run --rm \
 ```
 **Project Structure**
 
-```
+```plaintext
 generated/python-flask/
  ├── __main__.py  # Flask root
  ├── openapi_server
@@ -112,17 +152,21 @@ generated/python-flask/
 
 Implement your code in:
 
-```
+```python
 openapi_server/controllers/preprocess_controller.py
 ```
 
+:::tip FHIR Helper Libraries
 You may use FHIR Python Helper modules like [fhir.resources](https://github.com/nazrulworld/fhir.resources) (Pydantic-based models).
+:::
 
 **Dockerfile (Flask)**
 
 Generator already provides a working Dockerfile.
 
+:::note Troubleshooting
 If there is an issue, try changing `FROM python:3-alpine` in the dockerfile to `FROM python:3.11-alpine`.
+:::
 
 ---
 
@@ -130,7 +174,7 @@ If there is an issue, try changing `FROM python:3-alpine` in the dockerfile to `
 
 **Generate**
 
-```sh
+```bash
 docker run --rm \
   -v ${PWD}:/local --user $(id -u):$(id -g)\
   openapitools/openapi-generator-cli generate \
@@ -144,7 +188,7 @@ The generated project already includes Maven or Gradle support.
 
 **Project Structure (Spring)**
 
-```
+```plaintext
 generated/spring/
  ├── pom.xml
  ├── src/main/java/org/openapitools/api/...   # handlers
@@ -154,7 +198,7 @@ generated/spring/
 
 Write your logic inside classes under:
 
-```
+```java
 src/main/java/org/openapitools/api/PreprocessApiController.java
 ```
 You may use FHIR Helper packages like [HAPI FHIR](https://hapifhir.io/), `hapi-fhir-base` provides parsing and manipulation.
