@@ -6,13 +6,22 @@ There are several alternatives to do this, one is to fork an existing project th
 
 ## Forking template
 
-Fork:
+### Java Script
 
- https://github.com/Gravitate-Health/preprocessing-service-example.
+ https://github.com/Gravitate-Health/preprocessing-service-example
 
 This is a simple preprocessor written in TrueScript/JavaScript. 
 You can write the business logic in `src/controllers/preporcessing.ts`.
 It is ready with Docker file, and even kubernetes yaml definitions.
+
+### Python
+
+https://github.com/Gravitate-Health/preprocessing-service-example-python
+
+This is another simple preprocessor written in Python.
+It is ready to fork and develop your own preprocessor from it, start at `preprocessor\controllers\preprocess_controller.py` the function is `_apply_preproce`. 
+This project also includes components to access common ePI elements such as the composition, as well as managing [`HtmlElementLink`](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-HtmlElementLink.html) Extension and extract and manipulate HTML content.
+Add your dependencies, write your code, test it with the embedded ePI examples.
 
 ## Generic Approach using OpenAPI Generator 
 You can opt to use an API sever generator, for example [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), which will be explained in detail.
