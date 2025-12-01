@@ -57,6 +57,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'reference',
+        path: 'ref',
+        routeBasePath: 'reference',
+        sidebarPath: './sidebars.js',
+        editUrl: 'https://github.com/gravitate-health/gravitate-health.github.io/tree/main/',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -76,6 +89,13 @@ const config = {
             label: 'Tutorial',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Reference',
+            docsPluginId: 'reference',
+          },
+          {
             href: 'https://github.com/gravitate-health',
             label: 'GitHub',
             position: 'right',
@@ -91,6 +111,10 @@ const config = {
               {
                 label: 'Tutorial',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Reference',
+                to: '/reference/intro',
               },
             ],
           },
