@@ -20,8 +20,9 @@ Lenses determine how [ePI](./epi.md) content should be adapted for individual pa
 
 ### FHIR Library Resource
 Lenses follow the [Lens Profile](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-lens.html):
-- JavaScript code encoded in Base64
+- JavaScript code encoded in Base64 (UTF-8)
 - Stored as `Library.content.data`
+- [LEE](./lee.md) decodes from Base64 → UTF-8 before execution
 - Contains metadata (author, version, purpose)
 
 ### Creation Tool

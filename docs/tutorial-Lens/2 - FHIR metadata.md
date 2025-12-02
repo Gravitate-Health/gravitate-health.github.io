@@ -18,7 +18,7 @@ This element contains the executable algorithm of the lens. The lens code handle
 
 | FHIR Path | Description | Constraints & Usage |
 | :--- | :--- | :--- |
-| **`content.data`** | The code of the lens - base64. This field stores the executable piece of code. | This is a **required** Must-Support (S) element. The value must be the data inline, Base64 encoded (`base64Binary`). The recommended language for lens code is JavaScript. |
+| **`content.data`** | The code of the lens - base64. This field stores the executable piece of code. | This is a **required** Must-Support (S) element. The value must be the data inline, Base64 encoded (`base64Binary`). The LEE will decode this from Base64 and interpret it as UTF-8. The recommended language for lens code is JavaScript. |
 | **`content.contentType`** | Mime type of the content. | This field specifies the data type, usually matching the coding language (e.g., `application/javascript` for JavaScript code). |
 
 ### 2. Name, Title, and Identification
@@ -106,7 +106,7 @@ The Lens Profile is structured as a FHIR `Library` resource. A developer would p
     {
       "contentType": "application/javascript",
       "data": "ZnVuY3Rpb24gZW5oYW5jZSgpIHsgLy8gQmFzZTY0IGVuY29kZWQgbGVucyBjb2RlLi4uIH0=" 
-      // Base64-encoded executable JavaScript code for the lens
+      // Base64-encoded UTF-8 JavaScript code for the lens (LEE decodes Base64 → UTF-8)
     }
   ]
 }

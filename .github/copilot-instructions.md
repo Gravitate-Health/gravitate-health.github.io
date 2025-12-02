@@ -97,7 +97,8 @@ Rely on Preprocessors for heavy computation, not Lenses.
 - Must handle stacking (input may already be preprocessed by another service)
 
 **Lenses**:
-- JavaScript code packaged as FHIR Library resources (Base64 encoded)
+- JavaScript code packaged as FHIR Library resources (Base64 encoded as UTF-8)
+- LEE decodes from Base64 and interprets as UTF-8 before execution
 - Use LEE helper methods: `modifyCSSClass()` and `addNewContent()`
 - Operate on three inputs: p(ePI), IPS, and Persona Vector (PV)
 - CSS classes define attention levels: `"highlight"` (high), `"collapse"` (low), or standard (no class)

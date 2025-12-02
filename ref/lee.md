@@ -16,7 +16,7 @@ LEE provides a **sandboxed runtime environment** for executing [Lens](./lens.md)
 
 1. Receives request from [Focusing Manager](./focusing-manager.md)
 2. Loads [Lens](./lens.md) code from FHIR Library resource
-3. Decodes Base64 JavaScript
+3. Decodes Base64 content, then interprets as UTF-8 JavaScript
 4. Prepares inputs: [p(ePI)](./p-epi.md), [IPS](./ips.md), [PV](./persona-vector.md)
 5. Executes lens in isolated context
 6. Applies modifications to generate [f(ePI)](./f-epi.md)

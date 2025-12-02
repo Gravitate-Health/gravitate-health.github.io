@@ -29,7 +29,7 @@ A lens is designed to execute within the **Lens Execution Environment (LEE)**. T
 :::
 
 :::info Lens Packaging
-Lenses are packaged as **FHIR objects** (specifically, using the [Lens Profile archetype](/docs/tutorial-Lens/2%20-%20FHIR%20metadata.md)) and contain their code, in JavaScript, encoded in Base64. The LEE must ensure that the lenses can operate successfully in both client-side and server-side focusing modes.
+Lenses are packaged as **FHIR objects** (specifically, using the [Lens Profile archetype](/docs/tutorial-Lens/2%20-%20FHIR%20metadata.md)) and contain their code, in JavaScript, encoded in Base64. The Lens Execution Environment (LEE) decodes the content from Base64 and interprets it as UTF-8 before execution. The LEE must ensure that the lenses can operate successfully in both client-side and server-side focusing modes.
 :::
 
 ## Understanding lens capabilities
