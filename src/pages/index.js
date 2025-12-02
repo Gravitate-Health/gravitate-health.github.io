@@ -22,6 +22,11 @@ function HomepageHeader() {
             to="/docs/intro">
             Learn more about FOSPS
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://build.fhir.org/ig/hl7-eu/gravitate-health/">
+            FHIR Implementation Guide
+          </Link>
         </div>
       </div>
     </header>
