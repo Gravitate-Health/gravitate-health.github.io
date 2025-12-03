@@ -1,7 +1,7 @@
 # FHIR Metadata
 
 :::info Lens Profile
-The **[Lens Profile](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-lens.html)** is the FHIR resource archetype used to package Lenses, which encode the specific logic (algorithm) required to automatically adapt ePI content for personalization. This profile is derived from the standard [FHIR Library resource](https://build.fhir.org/library.html).
+The **[Lens Profile](https://build.fhir.org/ig/hl7-eu/gravitate-health/StructureDefinition-lens.html)** is the FHIR resource profile used to package Lenses, which encode the specific logic (algorithm) required to automatically adapt ePI content for personalization. This profile is derived from the standard [FHIR Library resource](https://build.fhir.org/library.html).
 :::
 
 Lenses are treated as fully fledged FHIR resources and must contain both the operational code and descriptive metadata. The specification requires several key fields, many of which can include translations via the FHIR `extension:translation` [mechanism](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-translation.html).
@@ -69,14 +69,14 @@ The Lens Profile is structured as a FHIR `Library` resource. A developer would p
     // 1. Mandatory LEE Version Extension
     {
       "url": "http://hl7.eu/fhir/ig/gravitate-health/StructureDefinition/lee-version",
-      "valueString": "dev" 
+      "valueString": "0.0.1" 
     }
   ],
   "identifier": [ 
     // Identifier must follow the specified system pattern
     {
       "system": "http://gravitate-health.lst.tfo.upm.es",
-      "value": "my-lens-v1" 
+      "value": "my-lens" 
     }
   ],
   "version": "1.0.0", 

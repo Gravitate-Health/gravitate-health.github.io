@@ -78,7 +78,7 @@ FOSPS offers a comprehensive framework and resources for developers to integrate
 ### Lenses Development
 
 :::info Lens Capabilities
-Lenses are FHIR objects encoding JavaScript code, packaged using the Lens Profile archetype.
+Lenses are FHIR objects encoding JavaScript code, packaged using the Lens Profile.
 :::
 
 **Key Points:**
