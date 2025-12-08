@@ -21,15 +21,16 @@ Lenses contribute to the Focusing Mechanism by determining which sections of the
 A lens is designed to execute within the **Lens Execution Environment (LEE)**. To perform personalization effectively, the lens uses three critical inputs:
 
 :::note Critical Inputs
+
 1. **Preprocessed ePI (*p(ePI)*)**: This version of the ePI has been semantically annotated by [Pre-processors](/docs/tutorial-Preprocessor/0%20-%20Introduction.md), linking sections of the medical text to standard terminologies.
 
 2. **International Patient Summary (IPS)**: This contains clinical data relevant to the patient's health, such as existing conditions or allergies.
 
-3. **Persona Vector (PV)**: This extends the IPS by codifying and standardizing the patient's context and preferences (e.g., age, gender, pregnancy status).
+3. **Persona Vector (PV)**: This extends and complements the IPS by codifying and standardizing the patient's context and preferences that dont or shouldnt exist in the IPS.
 :::
 
 :::info Lens Packaging
-Lenses are packaged as **FHIR objects** (specifically, using the [Lens Profile](/docs/tutorial-Lens/2%20-%20FHIR%20metadata.md)) and contain their code, in JavaScript, encoded in Base64. The Lens Execution Environment (LEE) decodes the content from Base64 and interprets it as UTF-8 before execution. The LEE must ensure that the lenses can operate successfully in both client-side and server-side focusing modes.
+Lenses are packaged as **HL7 FHIR objects** (specifically, using the [Lens Profile](/docs/tutorial-Lens/2%20-%20FHIR%20metadata.md)) and contain their code, in JavaScript, encoded in Base64. The Lens Execution Environment (LEE) decodes the content from Base64 and interprets it as UTF-8 before execution. The LEE must ensure that the lenses can operate successfully in both client-side and server-side focusing modes.
 :::
 
 ## Understanding lens capabilities
