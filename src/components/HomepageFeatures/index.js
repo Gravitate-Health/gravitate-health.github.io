@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/cloud-data-download-svgrepo-com.svg').default,
     description: (
       <>
-        FOSPS uses HL-7 FHIR to manage ePIs (electronic Product Information) and IPS (International Patient Summary), 
+        FOSPS uses <a href="https://hl7.org/fhir/">HL7 FHIR</a> to manage ePIs (electronic Product Information) and <a href="https://build.fhir.org/ig/HL7/fhir-ips/en/">IPS (International Patient Summary)</a>,
         the future of interoperability. Connect to existing compendia, and health care systems with ease.
       </>
     ),
@@ -18,8 +18,7 @@ const FeatureList = [
     Svg: require('@site/static/img/annotate-svgrepo-com.svg').default,
     description: (
       <>
-        Add personality and personalization to ePIs. Whether is preparing them as your ePrescription/eDispensation applicaiton
-        needs, or embedding annotations conainting important information for users, FOSPS automatizes the process.
+        Add personality and personalization to ePIs. Whether is preparing them as your ePrescription/eDispensation application needs, or embedding annotations containing important information for users, FOSPS automatizes the process.
       </>
     ),
   },
@@ -28,8 +27,7 @@ const FeatureList = [
     Svg: require('@site/static/img/process-svgrepo-com.svg').default,
     description: (
       <>
-        Through both data and process standards, smart appliactions can take advantage of personalization and safety accross jurisdictions.
-        Have personalization rules that work idependently of the appliactions.
+        Through both data and process standards, smart applications can take advantage of personalization and safety across jurisdictions. Have personalization rules that work independently of the applications.
       </>
     ),
   },
@@ -38,8 +36,8 @@ const FeatureList = [
     Svg: require('@site/static/img/lens-svgrepo-com.svg').default,
     description: (
       <>
-        This core feature enables the personalization of electronic Product Information (ePI) for end-users. It involves pre-processing ePIs, 
-        selecting appropriate lenses based on user context, and applying these lenses to tailor the information presented.
+        This core feature enables the personalization of electronic Product Information (ePI) for end-users. It involves pre-processing ePIs,
+        selecting appropriate lenses based on user context, and applying these lenses to tailor and improve the information presented.
       </>
     ),
   },
@@ -48,8 +46,7 @@ const FeatureList = [
     Svg: require('@site/static/img/multiple-documents-files-svgrepo-com.svg').default,
     description: (
       <>
-        FOSPS allows the management of supplementary materials (SM), including RMM/aRMM, HEM, and other educational content, to provide a 
-        holistic view of medication and health information.
+        The Federated Open-Source Publishing System (FOSPS) enables the structured management of supplementary materials, including risk-minimisation measures, additional risk-minimisation measures, health education materials, and other educational resources, to provide a comprehensive and integrated view of medicines and related health information.
       </>
     ),
   },
@@ -58,7 +55,7 @@ const FeatureList = [
     Svg: require('@site/static/img/trust-wallet-svgrepo-com.svg').default,
     description: (
       <>
-        Ensures content trustworthiness through provenance records, data integrity verification, and trust functions, enabling secure exchange of validated.
+        Supports content trustworthiness through robust provenance records, integrity verification mechanisms, and dedicated trust functions, ensuring the secure exchange of validated health and medication information.
       </>
     ),
   },
@@ -67,8 +64,8 @@ const FeatureList = [
     Svg: require('@site/static/img/puzzle-9-svgrepo-com.svg').default,
     description: (
       <>
-        FOSPS is designed with a three-layer architecture: Data, Service, and App Layer. This modularity allows for flexibility, scalability, and adaptation 
-        to various use cases. 
+        FOSPS is designed with a three-layer architecture: Data, Service, and App Layer. This modularity allows for flexibility, scalability, and adaptation
+        to various use cases.
       </>
     ),
   },
@@ -77,7 +74,7 @@ const FeatureList = [
     Svg: require('@site/static/img/federated-svgrepo-com.svg').default,
     description: (
       <>
-        Allows for the interconnection of multiple FOSPS instances, enabling collaboration and data exchange across different healthcare organizations or regions. 
+        Allows for the interconnection of multiple FOSPS instances, enabling collaboration and data exchange across different healthcare organizations or regions.
       </>
     ),
   },
@@ -86,7 +83,7 @@ const FeatureList = [
     Svg: require('@site/static/img/user-check-svgrepo-com.svg').default,
     description: (
       <>
-        Employs Keycloak for secure access control, ensuring that users can only access authorized resources based on their roles and permissions. 
+        Employs Keycloak for secure access control, ensuring that users can only access authorized resources based on their roles and permissions.
       </>
     ),
   },
@@ -101,7 +98,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
