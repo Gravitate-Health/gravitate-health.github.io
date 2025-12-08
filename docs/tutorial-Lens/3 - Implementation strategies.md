@@ -7,7 +7,6 @@ A Lens is a JavaScript program that defines how to transform an ePI document. Th
 ### Required and Optional Functions
 
 - **`enhance` function (mandatory)**: This function takes the original ePI content as input and returns the transformed content. It is where you define how to modify the ePI.
-- **`report` function (optional)**: This function generates a report of the changes made by the enhance function. It can be used for logging or debugging purposes.
 - **`explanation` function (optional)**: This function provides a human-readable explanation of the changes made by the enhance function. It can be useful for users to understand what modifications were applied.
 
 ### Example Structure
@@ -15,24 +14,46 @@ A Lens is a JavaScript program that defines how to transform an ePI document. Th
 Here is a simple example of a Lens structure:
 
 ```javascript
-function enhance(originalContent) {
+/*
+  Input data
+    These variables are automatically populated by the lens execution environment.
+*/
+// ePI data
+let epiData = epi;
+// IPS data
+let ipsData = ips;
+// PV data (for future use)
+let pvData = pv;
+// Original HTML content to be transformed
+let htmlData = html;
+
+
+/* 
+    Enhance function: Transforms the original content to highlight specific sections.
+    Input: htmlData (string) - The original text content.
+           ipsData (object) - The IPS resource data.
+           pvData (object) - The PV resource data.
+           epiData (object) - The ePI resource data.
+    Output: transformedContent (string) - The modified text content with highlights.
+*/
+function enhance() { 
     // Your transformation logic here
+    transformedContent = htmlData; // Placeholder
     return transformedContent;
 }
 
-function report(changes) {
-    // Your reporting logic here
-    return reportData;
-}
-
+/* 
+    Explanation function: Provides an explanation for the lens's behavior.
+    Output: explanationText (string) - A textual explanation.
+*/
 function explanation() {
     // Your explanation logic here
+    var explanationText = "This lens highlights relevant sections for your health condition beacuse...";
     return explanationText;
 }
 
 return {
     enhance: enhance,
-    report: report,
     explanation: explanation
 };
 ```
