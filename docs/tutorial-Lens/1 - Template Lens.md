@@ -4,7 +4,7 @@
 The fastest way to start developing a [Lens](/reference/lens) is to use the official **[lens-template](https://github.com/Gravitate-Health/lens-template)** repository. This template provides a minimal working lens with a complete test suite to validate your lens implementation.
 :::
 
-## Step 1: Fork the Template Repository
+## Fork the Template Repository
 
 Start by creating your own copy of the lens-template repository:
 
