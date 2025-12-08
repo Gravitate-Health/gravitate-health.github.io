@@ -13,12 +13,12 @@ If you're looking to integrate new components, develop specialized services, or 
 ## What is FOSPS?
 
 :::info Platform Overview
-FOSPS is a **Federated Open-Source Platform and Services** that serves as the IT infrastructure and services for the Gravitate-Health project's G-lens system. It adopts a **microservice architecture**, which means it's built from independently deployable and loosely coupled components, ensuring agility, scalability, and autonomy.
+[FOSPS](/reference/fosps) is a **Federated Open-Source Platform and Services** that serves as the IT infrastructure and services for the Gravitate-Health project's G-lens system. It adopts a **microservice architecture**, which means it's built from independently deployable and loosely coupled components, ensuring agility, scalability, and autonomy.
 :::
 
 ### Platform Architecture
 
-The platform is structured in three layers:
+The platform is structured in [three layers](/reference/architectural-layers):
 
 #### 1. App Layer
 This includes front-end applications for end-users like patients and healthcare professionals (HCPs), as well as web interfaces for administrators and developers.
@@ -39,18 +39,18 @@ A key characteristic of FOSPS is its **federated** nature, allowing for deployme
 To effectively interact with FOSPS, it's helpful to understand some core concepts:
 :::
 
-*   **G-lens**: This is the overarching solution and trademarked name for the Gravitate-Health system. It creates a focused, personalized view of electronic product information (ePI) for citizens.
-*   **ePI (Electronic Product Information)**: A digital document that provides regulated and scientifically validated information about a medicinal product, similar to a patient information leaflet (PIL). FOSPS focuses on making ePIs more understandable and actionable.
-*   **IPS (International Patient Summary)**: A standardized electronic health record extract containing essential healthcare information about a patient. This is sensitive data and crucial for personalizing information.
-*   **Supporting Material (SM) / Risk Minimization Measures (RMM) / Health Education Material (HEM)**: These terms refer to complementary digital content that supports ePIs or general health education. RMMs are regulated materials, while HEMs are less regulated but still come from trusted sources. FOSPS manages this content to provide relevant supplemental information.
-*   **Focusing Mechanism**: This is the process of adapting ePI information to the specific context of an end-user to achieve optimal understanding. It involves operations like highlighting, collapsing, or adding new content.
-*   **Lenses**: These are pieces of code that encode specific knowledge (e.g., medical facts, cultural aspects, patient preferences) and logic. Lenses determine how ePI content should be adapted during the focusing process (e.g., which sections to highlight or collapse).
-*   **Preprocessors**: These are software services that semantically annotate raw ePIs, categorizing text units with medical terms or patient characteristics (like age or gender) using standard terminologies (e.g., SNOMED-CT, ICPC-2). This "preprocessed ePI" (p(ePI)) is then ready for lenses.
-*   **Content Trust Framework (CTF)**: A set of tools and services designed to establish and assess the trustworthiness of digital content. It uses techniques like digital signatures, hashing, and provenance tracking to ensure content integrity, origin, and certifications.
-*   **Provenance**: A FHIR standard record that describes the agents (actors), entities (resources), and activities (processes) involved in producing, delivering, or influencing a resource. It creates a comprehensive supply chain record for content, enabling traceability.
+*   **[G-lens](/reference/g-lens)**: This is the overarching solution and trademarked name for the Gravitate-Health system. It creates a focused, personalized view of electronic product information (ePI) for citizens.
+*   **[ePI (Electronic Product Information)](/reference/epi)**: A digital document that provides regulated and scientifically validated information about a medicinal product, similar to a patient information leaflet (PIL). FOSPS focuses on making ePIs more understandable and actionable.
+*   **[IPS (International Patient Summary)](/reference/ips)**: A standardized electronic health record extract containing essential healthcare information about a patient. This is sensitive data and crucial for personalizing information.
+*   **[Supporting Material (SM)](/reference/supporting-material) / Risk Minimization Measures (RMM) / Health Education Material (HEM)**: These terms refer to complementary digital content that supports ePIs or general health education. RMMs are regulated materials, while HEMs are less regulated but still come from trusted sources. FOSPS manages this content to provide relevant supplemental information.
+*   **[Focusing Mechanism](/reference/focusing)**: This is the process of adapting ePI information to the specific context of an end-user to achieve optimal understanding. It involves operations like highlighting, collapsing, or adding new content.
+*   **[Lenses](/reference/lens)**: These are pieces of code that encode specific knowledge (e.g., medical facts, cultural aspects, patient preferences) and logic. Lenses determine how ePI content should be adapted during the focusing process (e.g., which sections to highlight or collapse).
+*   **[Preprocessors](/reference/preprocessor)**: These are software services that semantically annotate raw ePIs, categorizing text units with medical terms or patient characteristics (like age or gender) using standard terminologies (e.g., SNOMED-CT, ICPC-2). This "[preprocessed ePI](/reference/p-epi)" (p(ePI)) is then ready for lenses.
+*   **[Content Trust Framework (CTF)](/reference/ctf)**: A set of tools and services designed to establish and assess the trustworthiness of digital content. It uses techniques like digital signatures, hashing, and provenance tracking to ensure content integrity, origin, and certifications.
+*   **[Provenance](/reference/provenance)**: A FHIR standard record that describes the agents (actors), entities (resources), and activities (processes) involved in producing, delivering, or influencing a resource. It creates a comprehensive supply chain record for content, enabling traceability.
 *   **FHIR (Fast Healthcare Interoperability Resources)**: The interoperability standard upon which FOSPS is built. It defines rules and specifications for exchanging healthcare data electronically.
 *   **API (Application Programming Interface)**: FOSPS services expose their functionalities through REST APIs, enabling standard communication between different components and external applications.
-*   **Audit Log**: A component that provides granular auditability for all platform activity, maintaining an immutable and non-repudiable trace of events using blockchain technology.
+*   **[Audit Log](/reference/audit-log)**: A component that provides granular auditability for all platform activity, maintaining an immutable and non-repudiable trace of events using blockchain technology.
 
 ## How FOSPS Helps You Develop
 
@@ -84,7 +84,7 @@ Lenses are FHIR objects encoding JavaScript code, packaged using the Lens Profil
 **Key Points:**
 
 - The [FHIR Lens bundler](https://github.com/Gravitate-Health/fhir-lens-bundler) tool can be used to aid in the packaging.
-- JavaScript code must comply with a "function interface" so it can be invoked from the Lens Execution Environment.
+- JavaScript code must comply with a "function interface" so it can be invoked from the [Lens Execution Environment (LEE)](/reference/lee).
 - You can use helper methods to `modifyCSSClass()` (for highlighting or collapsing sections) or `addNewContent()` (for adding HTML tags, hyperlinks, images, videos, or interactive elements).
 - Lenses cannot remove or directly alter ePI content due to legal regulations, only change its display format.
 - Lenses can operate on both server-side and client-side focusing modes.
@@ -106,7 +106,7 @@ Preprocessors are pluggable services that semantically annotate ePIs.
 ### Connector Development
 
 :::info Data Integration
-Connectors are modules responsible for retrieving and transforming information from diverse sources into standard FHIR resources.
+[Connectors](/reference/connectors) are modules responsible for retrieving and transforming information from diverse sources into standard FHIR resources.
 :::
 
 **Capabilities:**
@@ -139,7 +139,7 @@ Frontend applications can interact with FOSPS APIs for authentication/authorizat
 
 **Authentication:**
 
-- FOSPS uses **Keycloak** as the Identity Provider for authentication and authorization, supporting standard protocols like OAuth 2.0 and OpenID Connect for Single-Sign-On solutions.
+- FOSPS uses **[Keycloak](/reference/keycloak)** as the Identity Provider for authentication and authorization, supporting standard protocols like OAuth 2.0 and OpenID Connect for Single-Sign-On solutions.
 
 ---
 
