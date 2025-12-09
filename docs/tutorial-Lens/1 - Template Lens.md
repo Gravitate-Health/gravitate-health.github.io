@@ -34,6 +34,7 @@ npm install
 
 :::note Repository Setup
 After forking, you have a complete development environment ready. The repository structure includes:
+
 - `src/` - Lens source code
 - `test/` - Test suite with sample ePIs and IPS
 - `package.json` - Project configuration and scripts
@@ -74,6 +75,7 @@ The test suite provides:
 
 :::tip Customizable Test Data
 You can customize these sample resources to match your specific lens use case. For example:
+
 - Add patient conditions relevant to your lens logic (e.g., pregnancy, allergies)
 - Include specific medications or lab results
 - Modify age, gender, or other persona attributes
@@ -100,6 +102,7 @@ describe('My Lens Custom Tests', () => {
 ```
 
 These functions allow you to:
+
 - Verify that specific CSS classes (`highlight`, `collapse`) are applied correctly
 - Check that supplementary HTML content is added in appropriate locations
 - Validate conditional logic based on patient data
@@ -126,6 +129,7 @@ npm test -- --coverage
 
 :::tip Test-Driven Development
 As you develop your lens, continuously run the test suite to ensure:
+
 1. You haven't accidentally removed content
 2. Your focusing logic works as intended
 3. Edge cases are properly handled

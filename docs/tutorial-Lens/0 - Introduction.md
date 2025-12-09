@@ -55,6 +55,23 @@ The goal is to establish three levels of attention:
 When multiple lenses are stacked, developers must ensure that if an element already possesses a class attribute (i.e., from a previously executed lens), the new class attribute is handled appropriately, prioritizing the larger attention detail (e.g., if the current lens states a section needs to be `"collapse"`, but the class is already `"highlight"`, then `"highlight"` should prevail).
 :::
 
+#### Other classes used
+
+Beyond the core `highlight` and `collapse` classes, the focusing ecosystem supports additional CSS classes for richer content presentation:
+
+| Class | Aliases | Description |
+|-------|---------|-------------|
+| `info` | `information` | Blue-bordered info blocks for general informational content (ℹ️ prefix) |
+| `warning` | `caution` | Orange-bordered notices for potential issues or cautions (⚠️ prefix) |
+| `danger` | `critical`, `alert` | Red-bordered serious warnings requiring immediate attention (🚨 prefix) |
+| `special` | `cta`, `action` | Green-bordered call-to-action blocks for important actions |
+| `tip` | `hint` | Purple-bordered helpful suggestions and hints (💡 prefix) |
+| `success` | — | Green-bordered positive confirmations (✅ prefix) |
+
+:::note
+These classes provide visual cues through colors, icons, and borders to help patients quickly identify the nature and importance of different sections.
+:::
+
 ### Adding HTML tags for hyperlinks/media
 
 Lenses utilize this capability to add supplementary information. This involves injecting new HTML tags into the document structure to enrich the content.
