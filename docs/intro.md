@@ -97,7 +97,7 @@ Lenses are HL7 FHIR objects encoding JavaScript code, packaged using the [Lens P
 
 **Key Points:**
 
-* The [FHIR Lens bundler](https://github.com/Gravitate-Health/fhir-lens-bundler) tool can be used to aid in the packaging.
+* The [FHIR Lens bundler](https://github.com/Gravitate-Health/lens-tool-bundler) tool can be used to aid in the packaging.
 * JavaScript code must comply with a "function interface" so it can be invoked from the [Lens Execution Environment (LEE)](/reference/lee).
 * You can use helper methods to `modifyCSSClass()` (for highlighting or collapsing sections) or `addNewContent()` (for adding HTML tags, hyperlinks, images, videos, or interactive elements).
 * Lenses cannot remove or directly alter ePI content due to legal regulations, only change its display format.

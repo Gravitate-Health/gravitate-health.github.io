@@ -102,7 +102,7 @@ Rely on Preprocessors for heavy computation, not Lenses.
 - Use LEE helper methods: `modifyCSSClass()` and `addNewContent()`
 - Operate on three inputs: p(ePI), IPS, and Persona Vector (PV)
 - CSS classes define attention levels: `"highlight"` (high), `"collapse"` (low), or standard (no class)
-- Packaged using the [FHIR Lens bundler](https://github.com/Gravitate-Health/fhir-lens-bundler)
+- Packaged using the [FHIR Lens bundler](https://github.com/Gravitate-Health/lens-tool-bundler)
 
 **Connectors**:
 - Provide access to FHIR resources (ePI, IPS, Persona Dimension Collection, Support Material)

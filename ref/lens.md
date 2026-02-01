@@ -26,7 +26,7 @@ Lenses follow the [Lens Profile](https://build.fhir.org/ig/hl7-eu/gravitate-heal
 - Contains metadata (author, version, purpose)
 
 ### Creation Tool
-Packaged using the [FHIR Lens bundler](https://github.com/Gravitate-Health/fhir-lens-bundler) tool.
+Packaged using the [FHIR Lens bundler](https://github.com/Gravitate-Health/lens-tool-bundler) tool.
 
 ## Execution Inputs
 
