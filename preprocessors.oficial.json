@@ -1,0 +1,36 @@
+{
+  "preprocessors": [
+    {
+      "name": "preprocessing-service-cleaner",
+      "description": "a preprocessor that optimizes annotations, removing unused ones and reworking HTML code",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-cleaner.git"
+    },
+    {
+      "name": "preprocessing-service-dictionary",
+      "description": "A preprocessor that uses a dictionary database to locate and annotate specific words, so they can be linked to their dictionary/terminology definitions",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-dictionary.git"
+    },
+    {
+      "name": "preprocessing-service-manual",
+      "description": "A Preprocessor that searches for matching and existing preprocessed ePI, usually edited manually. ",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-manual.git"
+    },
+    {
+      "name": "preprocessing-service-terminology",
+      "description": "A preprocessor that identifies terms in the ICPC2 terminology, and annotates the whole sentence it appears in.",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-terminology.git"
+    }
+  ],
+  "examples": [
+    {
+      "name": "preprocessing-service-example-python",
+      "description": "a preprocessor writen in Python with helper functions to explore HTMLElementLink extensions and HTML content of the ePI",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-example-python.git"
+    },
+    {
+      "name": "preprocessing-service-example-TypeScript",
+      "description": "A Template preprocessor written in TypeScript.",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-example-TypeScript.git"
+    }
+  ]
+}

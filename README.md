@@ -32,6 +32,14 @@ npm run generate-lenses
 
 This command scans all `lens-logic-*` folders in the parent directory and generates/updates `lenses.oficial.json` with lens metadata extracted from FHIR Library Resources. Run this whenever lens repositories are added or updated.
 
+### Generate Preprocessors JSON
+
+```
+npm run generate-preprocessors
+```
+
+This command uses GitHub CLI to fetch all `preprocessing-service-*` repositories from the Gravitate-Health organization and generates/updates `preprocessors.oficial.json`. Requires `gh` CLI to be installed and authenticated. Run this whenever preprocessor repositories are added or updated.
+
 ### Deployment
 
 Using SSH:

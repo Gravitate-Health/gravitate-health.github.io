@@ -75,3 +75,91 @@ Run this script whenever:
 **"Failed to extract lens info"**: Verify that the JSON file is a valid FHIR Library Resource with `resourceType: "Library"`.
 
 **Git remote warnings**: If a lens folder doesn't have a Git remote, the script will continue but set `repoUrl` to `null` for that lens.
+
+---
+
+## generate-preprocessors-json.js
+
+Generates/updates the `preprocessors.oficial.json` file with information about all official FOSPS preprocessors from the Gravitate-Health GitHub organization.
+
+### What it does
+
+The script:
+1. Uses GitHub CLI (`gh`) to fetch all `preprocessing-service-*` repositories from the Gravitate-Health organization
+2. Extracts repository metadata: `name`, `description`, and URL
+3. Categorizes repositories into:
+   - **Operational preprocessors**: Production-ready preprocessing services
+   - **Examples/templates**: Repositories containing `example` in their name (meant to be forked)
+4. Generates a JSON file with categorized preprocessor information
+
+### Usage
+
+```bash
+# Run directly with Node.js
+node scripts/generate-preprocessors-json.js
+
+# Or use the npm script
+npm run generate-preprocessors
+```
+
+Output location: `preprocessors.oficial.json` (at workspace root)
+
+### Requirements
+
+- Node.js >= 18.0
+- **GitHub CLI (`gh`)** must be installed and authenticated
+  - Install from: https://cli.github.com/
+  - Authenticate with: `gh auth login`
+
+### Output Format
+
+The generated `preprocessors.oficial.json` contains an object with two arrays:
+
+```json
+{
+  "preprocessors": [
+    {
+      "name": "preprocessing-service-cleaner",
+      "description": "a preprocessor that optimizes annotations",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-cleaner.git"
+    }
+  ],
+  "examples": [
+    {
+      "name": "preprocessing-service-example-python",
+      "description": "a preprocessor written in Python with helper functions",
+      "repoUrl": "https://github.com/Gravitate-Health/preprocessing-service-example-python.git"
+    }
+  ]
+}
+```
+
+### Using in Documentation
+
+The generated JSON file can be imported and used in MDX files through the `PreprocessorTable` component:
+
+```mdx
+import PreprocessorTable from '@site/src/components/PreprocessorTable';
+
+<PreprocessorTable />
+```
+
+This component automatically renders two tables:
+1. **Operational Preprocessors**: Production-ready services
+2. **Example Templates**: Starting points for development (with a visual indicator that they're meant to be forked)
+
+### When to run
+
+Run this script whenever:
+- A new preprocessor repository is created in the Gravitate-Health organization
+- Repository descriptions are updated
+- You want to refresh the documentation with the latest preprocessor list
+
+### Troubleshooting
+
+**"GitHub CLI (gh) is not installed"**: Install the GitHub CLI from https://cli.github.com/ and authenticate with `gh auth login`.
+
+**"No repositories found"**: Verify that:
+- You have access to the Gravitate-Health organization
+- Repositories follow the `preprocessing-service-*` naming pattern
+- Your `gh` authentication is valid (try `gh auth status`)
