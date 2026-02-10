@@ -24,6 +24,14 @@ npm build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Generate Lenses JSON
+
+```
+npm run generate-lenses
+```
+
+This command scans all `lens-logic-*` folders in the parent directory and generates/updates `lenses.oficial.json` with lens metadata extracted from FHIR Library Resources. Run this whenever lens repositories are added or updated.
+
 ### Deployment
 
 Using SSH:

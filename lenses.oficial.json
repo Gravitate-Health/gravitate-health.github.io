@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Allergies and Intollerances Lens",
+    "description": "A lens that highlight any information related to allergies or intollerances",
+    "title": "Allergies and Intollerance Lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-allergy-and-intollerance.git"
+  },
+  {
+    "name": "Contact lens",
+    "description": "Lens that adds clickable contact links (email/phone) from the patient's healthcare provider information",
+    "title": "Contact Info Lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-contact.git"
+  },
+  {
+    "name": "Diabetes lens",
+    "description": "Lens that highlight diabetes related information",
+    "title": "diabetes-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-diabetes.git"
+  },
+  {
+    "name": "Doping lens",
+    "description": "Lens that highlights doping-related information for professional athletes when the medication contains WADA prohibited substances",
+    "title": "doping-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-doping.git"
+  },
+  {
+    "name": "High Risk Medication Lens",
+    "description": "A lens that adds safety questionnaire links for high-risk medications that may cause serious side effects",
+    "title": "Questionnaire Lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-questionnaire.git"
+  },
+  {
+    "name": "Interaction Lens",
+    "description": "A lens that highlight any information related to interactions between other mediciones or ePIs",
+    "title": "Interaction Lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-interaction.git"
+  },
+  {
+    "name": "Laboratory results Interaction lens",
+    "description": "Lens that highlights renal dose adjustment information when patient has low eGFR (< 30) laboratory results",
+    "title": "lab-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-test-lab.git"
+  },
+  {
+    "name": "Pregnancy lens",
+    "description": "Lens that highlight or collapses pregnancy related information",
+    "title": "pregnancy-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-pregnancy.git"
+  },
+  {
+    "name": "QT prolongation lens",
+    "description": "Lens that highlights QT prolongation risk information when patient is taking Citalopram and has low potassium levels",
+    "title": "qt-prolongation-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-med-lab.git"
+  },
+  {
+    "name": "Support Material Lens",
+    "description": "Lens that aplies RMM to a leaflet",
+    "title": "Risk Minimization Material",
+    "status": "draft",
+    "repoUrl": "https://github.com/Gravitate-Health/lens-logic-risk-minimization-material.git"
+  },
+  {
+    "name": "Community Lens",
+    "description": "Provides information about online communities",
+    "title": "community-lens",
+    "status": "draft",
+    "repoUrl": "https://github.com/joofio/gh-community-lens.git"
+  }
+]
