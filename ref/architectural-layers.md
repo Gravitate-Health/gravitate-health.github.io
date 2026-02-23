@@ -7,6 +7,7 @@ tags: [platform, architecture, layers]
 # Architectural Layers
 
 [FOSPS](./fosps.md) is structured using a three-layer architecture that separates concerns and enables modularity.
+![FOSPS Architectural Layers](./architecturev9.png)
 
 ## The Three Layers
 
