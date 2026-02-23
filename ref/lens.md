@@ -38,51 +38,9 @@ Lenses receive three inputs from [LEE](./lee.md):
 
 ## Lens Operations
 
-### Attention Detail Modification
-Using `modifyCSSClass()` LEE helper:
-
-```javascript
-// Highlight sections relevant to patient conditions
-modifyCSSClass("pregnancy-warning", "highlight");
-
-// Collapse irrelevant sections
-modifyCSSClass("pediatric-dosing", "collapse");
-```
-
-See [Attention Detail Modification](./attention-modification.md) for details.
-
-### Adding Supplementary Content
-Using `addNewContent()` LEE helper:
-
-```javascript
-// Add hyperlink to Supporting Material
-addNewContent(
-  "pregnancy-section",
-  '<a href="/sm/pregnancy-guide">More information</a>'
-);
-
-// Embed video
-addNewContent(
-  "administration-section",
-  '<video src="/videos/injection-technique.mp4"></video>'
-);
-```
-
-## Lens Logic Example
-
-```javascript
-// Check patient's IPS for pregnancy
-if (ips.hasCondition("pregnancy")) {
-  // Highlight pregnancy warnings
-  modifyCSSClass("pregnancy-warning", "highlight");
-  
-  // Add relevant Supporting Material
-  addNewContent("warnings", pregnancySupportMaterialLink);
-  
-  // Collapse non-relevant sections
-  modifyCSSClass("breastfeeding-only", "collapse");
-}
-```
+Lenses code is a JavaScript module that implements at least the `enhance()` function, which applies transformation rules to the [p(ePI)](./p-epi.md) based on the [IPS](./ips.md) and [PV](./persona-vector.md), and returns the updated `html` code representing the whole composition of the ePI. 
+Lenses can also implement an optional `explanation()` function to provide reasoning behind their decisions.
+The input elements (`epi`, `ips`, `pv` and `html` code to process), are injected in to the lens object, so the lens can access them directly from its called functions, any modifications to these attributes will be descarted.
 
 ## Regulatory Constraints
 

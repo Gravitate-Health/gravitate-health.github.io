@@ -43,7 +43,7 @@ These concepts describe the core process of personalizing the ePI content for th
 *   **[Lens Execution Environment (LEE)](./lee.md):** The service that executes the lens logic on the p(ePI) using the patient's contextual data (IPS/PV) to produce the final outcome.
 *   **[Focused ePI (f(ePI))](./f-epi.md):** The final personalized output of the focusing process, adapted for a specific patient's context.
 *   **[Attention Detail Modification](./attention-modification.md):** The specific non-content changes applied by lenses, categorized by **"highlight"** (increased attention) and **"collapse"** (decreased attention) CSS classes.
-*   **[Focusing Flows](./focusing-flows.md):** The four defined methods for invoking the focusing process based on how the ePI and IPS/PV data are provided (e.g., ePI ID and IPS ID; ePI JSON and IPS JSON).
+
 ## IV. Trust, Security, and Quality Components
 
 These modules enforce security, traceability, and monitoring within the platform.

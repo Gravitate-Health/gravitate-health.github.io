@@ -16,6 +16,20 @@ If you're looking to integrate new components, develop specialized services, or 
 [FOSPS](/reference/fosps) is a **Federated Open-Source Platform and Services** that serves as the IT infrastructure and services for the Gravitate-Health project's G-lens system. It adopts a **microservice architecture**, which means it's built from independently deployable and loosely coupled components, ensuring agility, scalability, and autonomy.
 :::
 
+![FOSPS Features](./FOSPS-features.png)
+
+FOSPS is designed to be **open-source** and encourages **collaboration**. It provides a comprehensive set of tools, APIs, and resources for developers to create new components, integrate with existing ones, and build applications that enhance the user experience.
+
+FOSPS is built on **HL7 FHIR standards**, ensuring high interoperability with a wide range of healthcare systems and data sources. This makes it easier for developers to exchange data and integrate their solutions within the healthcare ecosystem. One of the key elements required for the core functionalities of FOSPS is the use of **standard terminologies** (e.g., SNOMED-CT, ICPC-2) to semantically annotate ePIs, which is essential for enabling the focusing mechanism, Personal Health literature and material matchmaking.
+
+In the FOSPS team we recognise the importance of **trust** in digital health solutions. Therefore, FOSPS includes a comprehensive **Cyber Trust Framework (CTF)** to ensure the integrity, authenticity, and traceability of all FHIR resources handled by the platform. This is critical for building trust in health information and ensuring that users can rely on the data they receive.
+
+The key features of FOSPS include:
+1. **[Focusing Mechanism](/reference/focusing)**: A core feature that allows for the adaptation of ePI information to the specific context of an end-user, enhancing understanding and usability.
+2. **Health and wWllbeing Services**: FOSPS can manage a set of personal health services, in the scope of medicine management the example service FOSPS currently provides makes suggestions on general health supporting material (like digital media and servies) to patients matchmaking from each patient's summary.
+3. **Supporting Material Management**: FOSPS can manage and deliver supporting materials (like RMMs and HEMs) that complement ePIs, providing users with [relevant supplemental information](/reference/sm-matchmaking).
+
+
 ### Platform Architecture
 
 The platform is structured in [three layers](/reference/architectural-layers):
