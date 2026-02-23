@@ -26,7 +26,7 @@ In the FOSPS team we recognise the importance of **trust** in digital health sol
 
 The key features of FOSPS include:
 1. **[Focusing Mechanism](/reference/focusing)**: A core feature that allows for the adaptation of ePI information to the specific context of an end-user, enhancing understanding and usability.
-2. **Health and wWllbeing Services**: FOSPS can manage a set of personal health services, in the scope of medicine management the example service FOSPS currently provides makes suggestions on general health supporting material (like digital media and servies) to patients matchmaking from each patient's summary.
+2. **Health and Wellbeing Services**: FOSPS can manage a set of personal health services, in the scope of medicine management the example service FOSPS currently provides makes suggestions on general Health Education Material (HEM, like digital media and other services) to patients matchmaking from each patient's summary. One example is managing vaccination campaigns, where FOSPS can provide vaccination announcements, or appointments based on the patient's health profile.
 3. **Supporting Material Management**: FOSPS can manage and deliver supporting materials (like RMMs and HEMs) that complement ePIs, providing users with [relevant supplemental information](/reference/sm-matchmaking).
 
 
