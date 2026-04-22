@@ -1,0 +1,8 @@
+{
+  "label": "Tutorial - Deployment",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Install and operate the Gravitate Health platform with Helmfile profiles, quick start, full deployment flow, and module-specific guidance."
+  }
+}
