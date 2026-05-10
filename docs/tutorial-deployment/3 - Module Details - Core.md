@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Module Details - Core
@@ -16,8 +16,8 @@ sidebar_position: 4
 
 | Module key | Chart path | Required for baseline | If skipped |
 | --- | --- | --- | --- |
-| [`fhirIps`](https://github.com/Gravitate-Health/fhir-ips) | `oci://ghcr.io/gravitate-health/charts/hapi-fhir-jpaserver` | Yes | IPS-dependent flows fail |
-| [`fhirEpi`](https://github.com/Gravitate-Health/fhir-epi) | `oci://ghcr.io/gravitate-health/charts/hapi-fhir-jpaserver` | Yes | ePI-dependent flows fail |
+| [`fhirIps`](https://github.com/Gravitate-Health/hapi-fhir-deployments) | `oci://ghcr.io/gravitate-health/charts/fhir-ips` | Yes | IPS-dependent flows fail |
+| [`fhirEpi`](https://github.com/Gravitate-Health/hapi-fhir-deployments) | `oci://ghcr.io/gravitate-health/charts/fhir-epi` | Yes | ePI-dependent flows fail |
 | [`terminology`](https://github.com/Gravitate-Health/terminology-service) | `oci://ghcr.io/gravitate-health/charts/terminology-service` | Recommended | Terminology preprocessing features degrade |
 
 ## Core orchestration
@@ -45,3 +45,5 @@ Most critical knobs:
 - Networking mode per module (`istio`, `ingress`, `none`)
 - Resource requests/limits for stateful and orchestration services
 - FHIR endpoint URLs used by connector and focusing modules
+
+For FHIR server-specific configuration (DB credentials, storage, probe patching, context paths), see [FHIR Servers](./3.5%20-%20FHIR%20Servers.md).

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Troubleshooting
@@ -40,6 +40,44 @@ Actions:
 - Confirm Istio auth policies and request authentication resources
 - Check Keycloak URL-related values match your host
 
+## FHIR server pod stuck in NotReady / probe failures
+
+Symptoms:
+
+- Pod is running but never becomes Ready
+- Liveness or readiness probe fails with 404
+
+This happens when the probe-patch Job has not yet run or failed. The upstream HAPI chart hardcodes probe paths to `/livez`/`/readyz`, but the server runs at `/epi/api/livez` etc.
+
+Actions:
+
+- Check if the probe-patch Job completed: `kubectl get jobs -A | grep probe-patch`
+- Inspect Job logs: `kubectl logs -n <namespace> job/<release>-probe-patch`
+- Re-trigger by running `helm upgrade` (hook runs on every upgrade)
+- Manually patch as a last resort:
+  ```bash
+  kubectl patch deployment fhir-server-epi -n <namespace> \
+    --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/livenessProbe/httpGet/path","value":"/epi/api/livez"}]'
+  ```
+
+## FHIR server cannot connect to PostgreSQL
+
+Symptoms:
+
+- HAPI pod crashes or logs `Connection refused` / `password authentication failed`
+
+Actions:
+
+- Verify the DB Secret exists and has the expected keys (`password`, `postgres-password`):
+  ```bash
+  kubectl get secret fhir-server-epi-postgresql -n <namespace> -o jsonpath='{.data}' | python3 -m json.tool
+  ```
+- Confirm `hapi.externalDatabase.host` matches the PostgreSQL Service name (`<release-name>-postgresql`):
+  ```bash
+  kubectl get svc -n <namespace> | grep postgresql
+  ```
+- If the Secret is missing (e.g. after accidental deletion), run `helm upgrade` — the chart will regenerate it
+
 ## Focusing/connector errors due to missing upstreams
 
 Symptoms:
@@ -48,8 +86,8 @@ Symptoms:
 
 Actions:
 
-- Verify both FHIR servers are healthy
-- Confirm in-cluster service DNS names resolve
+- Verify both FHIR servers are healthy (`/epi/api/readyz`, `/ips/api/readyz` return 200)
+- Confirm in-cluster service DNS names resolve (`fhir-server-epi`, `fhir-server-ips`)
 - Check module env values for endpoint URLs
 
 ## Deploying without Istio
